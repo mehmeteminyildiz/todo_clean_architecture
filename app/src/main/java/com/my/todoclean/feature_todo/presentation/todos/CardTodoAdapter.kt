@@ -43,9 +43,9 @@ class CardTodoAdapter : RecyclerView.Adapter<CardTodoAdapter.CardTodoViewHolder>
             tvTitle.text = item.title
             tvDescription.text = item.content
             tvCategory.text = "Business (!)"
-            rbIsCompleted.isSelected = item.isCompleted
+            checkbox.isChecked = item.isCompleted
 
-            rbIsCompleted.setOnCheckedChangeListener { buttonView, isChecked ->
+            checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
                 onClickListenerCustom?.let { listener ->
                     item.id?.let { todoId ->
                         listener(todoId, isChecked)
